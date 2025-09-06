@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"errors"
 
-	"github.com/aagamjainaj7/ecom/types"
+	"github.com/aagamjainaj7/golang-ecom/types"
 )
 
 type Store struct {

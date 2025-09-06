@@ -4,9 +4,9 @@ import (
 	"log"
 	"database/sql"
 
-	"github.com/aagamjainaj7/ecom/cmd/api"
-	"github.com/aagamjainaj7/ecom/config"
-	"github.com/aagamjainaj7/ecom/db"
+	"github.com/aagamjainaj7/golang-ecom/cmd/api"
+	"github.com/aagamjainaj7/golang-ecom/config"
+	"github.com/aagamjainaj7/golang-ecom/db"
 	"github.com/go-sql-driver/mysql"
 )
 

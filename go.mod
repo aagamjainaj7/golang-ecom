@@ -1,4 +1,4 @@
-module github.com/aagamjainaj7/ecom
+module github.com/aagamjainaj7/golang-ecom
 
 go 1.25.0
 

@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/aagamjainaj7/ecom/types"
+	"github.com/aagamjainaj7/golang-ecom/types"
 )
 
 func TestUserServiceHandler(t *testing.T) {

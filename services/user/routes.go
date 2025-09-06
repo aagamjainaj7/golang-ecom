@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/aagamjainaj7/ecom/services/auth"
-	"github.com/aagamjainaj7/ecom/types"
-	"github.com/aagamjainaj7/ecom/utils"
+	"github.com/aagamjainaj7/golang-ecom/services/auth"
+	"github.com/aagamjainaj7/golang-ecom/types"
+	"github.com/aagamjainaj7/golang-ecom/utils"
 	"github.com/gorilla/mux"
 )
 
