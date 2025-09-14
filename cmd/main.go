@@ -2,16 +2,17 @@ package main
 
 import (
 	"database/sql"
+	"fmt"
 	"log"
 
+	"github.com/go-sql-driver/mysql"
 	"github.com/aagamjainaj7/golang-ecom/cmd/api"
 	"github.com/aagamjainaj7/golang-ecom/configs"
 	"github.com/aagamjainaj7/golang-ecom/db"
-	"github.com/go-sql-driver/mysql"
 )
 
 func main() {
-	db, err := db.NewMySQLStorage(mysql.Config{
+		cfg := mysql.Config{
 		User:                 configs.Envs.DBUser,
 		Passwd:               configs.Envs.DBPassword,
 		Addr:                 configs.Envs.DBAddress,
@@ -19,25 +20,26 @@ func main() {
 		Net:                  "tcp",
 		AllowNativePasswords: true,
 		ParseTime:            true,
-	})
+	}
 
+	db, err := db.NewMySQLStorage(cfg)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	initStorage(db)
 
-	server := api.NewAPIServer(":8080", db)
+	server := api.NewAPIServer(fmt.Sprintf(":%s", configs.Envs.Port), db)
 	if err := server.Run(); err != nil {
 		log.Fatal(err)
 	}
 }
 
 func initStorage(db *sql.DB) {
-	if err := db.Ping(); err != nil {
-		log.Println("Error connecting to DB")
+	err := db.Ping()
+	if err != nil {
 		log.Fatal(err)
 	}
-	log.Println("DB connected successfully")
 
+	log.Println("DB: Successfully connected!")
 }
